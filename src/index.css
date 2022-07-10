@@ -1,0 +1,260 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body
+{
+  /* background-color: #DDD; */
+  background: linear-gradient(to right, #13d7d5, #08ca88);
+}
+
+.App
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.c-player
+{
+  /* width: 27rem; */
+  display: block;
+  background: linear-gradient(to bottom,#f7f4f4,#9ea4aa) ;
+  margin: 0px auto;
+  padding: 40px;
+  width: 33rem;
+  border-radius: 16px;
+  box-shadow: inset -6px -6px 12px rgba(92, 88, 88, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+}
+
+
+/* playing now heading */
+.c-player > h4
+{
+  color: black;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+}
+
+.c-player > h4:hover
+{
+  transform: scale(1.1);
+}
+
+
+/* footer paragraph of next up */
+.c-player > p
+{
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.c-player > p:hover
+{
+  transform: scale(1.042);
+}
+
+
+/* image details */
+.c-player-details .details-img
+{
+  position: relative;
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.c-player-details .details-img img
+{
+  display: block;
+  margin: 0px auto;
+  object-fit: contain;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), -6px -6px 12px rgba(255, 255, 255, 0.4);
+  animation: rotate 4s linear infinite;
+  animation-play-state: paused;
+  margin-bottom: 27px;
+}
+
+.c-player-details .details-img img
+{
+    animation-play-state: stop;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* details of title */
+.c-player-details .details-title
+{
+  color: #FFF;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+
+
+/* details of artists */
+.c-player-details .details-artist
+{
+  color: #FFF;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8), -2px -2px 4px rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+
+
+/* control button container class */
+.c-player-controls
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* play button */
+.c-player-controls .play-btn
+{
+  background-color: transparent;
+  border: 0;
+  color: black;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 45px;
+}
+
+.c-player-controls .play-btn:hover
+{
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+    /* background-image: linear-gradient(#13d7d5, #08ca88);
+    background-image: linear-gradient(to right, #13d7d5, #08ca88);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; */
+}
+
+/* backward and forward button */
+.c-player-controls .skip-btn
+{
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  font-size: 30px;
+}
+
+.c-player-controls .skip-btn:hover
+{
+  transform: scale(1.2);
+  transition: 0.1s ease-in-out;
+}
+
+
+/* audio tag  */
+.c-player-audio
+{
+  margin-left: 4.5rem;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  outline-width: 0;
+  opacity: 0.4;
+  position: block;
+}
+
+audio::-webkit-media-controls-play-button
+{
+  display: none;
+}
+
+
+
+/* ============================================= MEDIA QUERIES ============================================= */
+@media screen and (max-width: 480px)
+{
+  .c-player
+  {
+    height: 40rem;
+    width: 20rem;
+  }
+
+  .c-player-audio
+  {
+    display: none;
+  }
+
+  .c-player > p
+  {
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+/* ============================================= MEDIA QUERIES ============================================= */
+@media screen and (min-width: 481px) and ( max-width: 768px)
+{
+  .c-player
+  {
+    height: 40rem;
+    width: 27rem;
+  }
+
+  .c-player > h4
+  {
+    margin-top: -1rem;
+    font-size: 14px;
+  }
+
+  .c-player > p
+  {
+    margin-top: 2rem;
+  }
+
+  .c-player-details .details-img img
+  {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), -6px -6px 12px rgba(255, 255, 255, 0.4);
+    animation: rotate 4s linear infinite;
+    animation-play-state: paused;
+    margin-bottom: 27px;
+  }
+
+  .c-player-audio
+  {
+    margin-left: 1.8rem;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    outline-width: 0;
+    opacity: 0.4;
+    position: block;
+  }
+
+}
